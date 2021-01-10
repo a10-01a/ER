@@ -7,10 +7,9 @@ def main():
     camctrl = CameraControl()
     frame = camctrl.getFrame()
     camctrl.stopCamera()
-
     fd = FaceDetect(frame)
     faces = fd.getFaces(frame)
-    cv.imshow("aaa", faces)
+    cv.imshow("Face Detect", faces)
     cv.waitKey()
 
     
