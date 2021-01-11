@@ -4,13 +4,13 @@ from faceDetect import *
 from cameraControl import *
 
 def main():
-    camctrl = CameraControl()
-    frame = camctrl.getFrame()
-    camctrl.stopCamera()
-    fd = FaceDetect(frame)
+    # camctrl = CameraControl()
+    # frame = camctrl.getFrame()
+    # camctrl.stopCamera()
+    frame=cv.imread('./people.jpg')
+    fd = FaceDetect(frame, './face.xml')
     faces = fd.getFaces(frame)
-    cv.imshow("Face Detect", faces)
-    cv.waitKey()
+    fd.showFaces(faces)
 
     
 
