@@ -13,17 +13,17 @@ class FaceDetect():
         self.faces = cascade.detectMultiScale(
             gray,
             scaleFactor=1.1,
-            minNeighbors=25,
+            minNeighbors=20,
             minSize=(30, 30)
         )
         for (x, y, w, h) in self.faces:
             self.cropFaces.append(self.frame[y:y+h,x:x+w])
-            cv.rectangle(self.frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            # cv.rectangle(self.frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
         return self.cropFaces
 
     def showFaces(self, faces):
-        i = 0
+        i = 1
         for face in faces:
             cv.imshow(str(i), face)
             i+=1

@@ -7,7 +7,7 @@ def main():
     # camctrl = CameraControl()
     # frame = camctrl.getFrame()
     # camctrl.stopCamera()
-    frame=cv.imread('./people.jpg')
+    frame=cv.imread('./10people.jpg')
     fd = FaceDetect(frame, './face.xml')
     faces = fd.getFaces(frame)
     fd.showFaces(faces)
