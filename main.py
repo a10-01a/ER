@@ -7,10 +7,11 @@ def main():
     # camctrl = CameraControl()
     # frame = camctrl.getFrame()
     # camctrl.stopCamera()
-    frame=cv.imread('./10people.jpg')
+    frame=cv.imread('./img.jfif')
     fd = FaceDetect(frame, './face.xml')
     faces = fd.getFaces(frame)
-    fd.showFaces(faces)
+    fd.saveFaces(faces, './faces/')
+    fd.saveImage(fd.detectFaces(frame), './detected_faces/')
 
     
 
